@@ -19,4 +19,13 @@ public class Prato {
 
     @Column(name = "descricao", length = 1000)
     private String descricao;
+
+    private String peso;
+
+    private Float valor;
+
+
+
+
+
 }
