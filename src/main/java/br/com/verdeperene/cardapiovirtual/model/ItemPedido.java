@@ -13,6 +13,9 @@ public class ItemPedido {
     @Column(name = "id", nullable = false)
     private Long id;
 
+    @ManyToOne(optional = false)
+    private Pedido pedido;
+
     @Transient
     private Produto produto;
 

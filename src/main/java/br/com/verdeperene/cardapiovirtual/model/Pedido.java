@@ -18,10 +18,10 @@ public class Pedido {
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @Transient
+    @ManyToOne(optional = false)
     private Cliente cliente;
 
-    @Transient
+    @OneToMany(mappedBy = "pedido")
     private List<ItemPedido> produtos;
 
     private BigDecimal total;
