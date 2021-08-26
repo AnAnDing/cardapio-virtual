@@ -3,19 +3,18 @@ package br.com.verdeperene.cardapiovirtual.model;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.time.LocalDate;
-import java.util.List;
 
 @Data
 @Entity
-public class Cardapio {
-
+@Table(name = "item_pedido")
+public class ItemPedido {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = false)
     private Long id;
 
-    private LocalDate data;
-
     @Transient
-    private List<Prato> pratos;
+    private Produto produto;
+
+    private Integer quantidade;
 }

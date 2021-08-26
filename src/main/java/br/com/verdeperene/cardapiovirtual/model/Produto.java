@@ -1,14 +1,15 @@
 package br.com.verdeperene.cardapiovirtual.model;
 
+
 import lombok.Data;
 
 import javax.persistence.*;
-import java.time.LocalDate;
-import java.util.Date;
+import java.math.BigDecimal;
 
 @Data
 @Entity
-public class Cliente {
+@Table(name = "produto")
+public class Produto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
@@ -17,13 +18,12 @@ public class Cliente {
     @Column(nullable = false, length = 500)
     private String nome;
 
-    @Column(nullable = false, length = 11)
-    private String numContato;
+    @Column(name = "descricao", length = 1000)
+    private String descricao;
 
-    @Column(nullable = false)
-    private LocalDate dataNascimento= LocalDate.now();
+    private Integer peso;
 
-    @Column(nullable = false, length = 500)
-    private String endereco;
+    private BigDecimal valor;
 
+    private Integer quantidade;
 }
