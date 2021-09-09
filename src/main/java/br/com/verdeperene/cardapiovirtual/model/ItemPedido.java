@@ -3,6 +3,7 @@ package br.com.verdeperene.cardapiovirtual.model;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 
 @Data
 @Entity
@@ -16,8 +17,11 @@ public class ItemPedido {
     @ManyToOne(optional = false)
     private Pedido pedido;
 
-    @Transient
+    @ManyToOne(optional = false)
     private Produto produto;
 
+    @Column(nullable = false)
     private Integer quantidade;
+
+    private BigDecimal valorUnitario;
 }
