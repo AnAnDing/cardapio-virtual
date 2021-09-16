@@ -1,5 +1,6 @@
 package br.com.verdeperene.cardapiovirtual.controller;
 
+import br.com.verdeperene.cardapiovirtual.dto.FiltroProdutoDto;
 import br.com.verdeperene.cardapiovirtual.model.Produto;
 import br.com.verdeperene.cardapiovirtual.service.ProdutoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,8 +25,8 @@ public class ProdutoController {
     }
 
     @GetMapping
-    public Page<Produto> list(@RequestParam int pageSize, @RequestParam int pageNumber){
-        return service.list(pageSize, pageNumber);
+    public Page<Produto> list(FiltroProdutoDto dto){
+        return service.list(dto);
     }
 
     @DeleteMapping("{id}")

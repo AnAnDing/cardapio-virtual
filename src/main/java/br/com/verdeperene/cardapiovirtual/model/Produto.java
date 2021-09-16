@@ -15,7 +15,7 @@ public class Produto {
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @Column(nullable = false, length = 500)
+    @Column(nullable = false, length = 500, unique = true)
     private String nome;
 
     @Column(name = "descricao", length = 1000)

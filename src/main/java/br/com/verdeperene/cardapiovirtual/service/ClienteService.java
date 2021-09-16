@@ -8,8 +8,9 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 @Service
+//TODO: Criar Validação pra nao deixar incluir mais de um cliente com o mesmo Telefone
+//TODO: Permitir Filtrar por Nome - Opcional: Ver como filtrar com Like em JPQL
 public class ClienteService {
-
 
     @Autowired
     private ClienteRepository repository;
